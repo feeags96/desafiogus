@@ -40,7 +40,7 @@ document.addEventListener('DOMContentLoaded', function () {
             const backToTopButton = document.getElementById('back-to-top');
 
             window.addEventListener('scroll', () => {
-                if (window.scrollY > 500) { // Mostra o botão após rolar 500px para baixo
+                if (window.scrollY > 500) { 
                     backToTopButton.style.display = 'block';
                 } else {
                     backToTopButton.style.display = 'none';
