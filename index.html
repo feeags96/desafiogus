@@ -177,6 +177,25 @@ window.dataLayer.push({
 });
 </script>
 
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    var buttons = document.querySelectorAll(".buy-btn");
+    buttons.forEach(function(button) {
+        button.addEventListener("click", function() {
+            var productName = this.closest(".product").querySelector("h2").innerText;
+            
+
+            window.dataLayer = window.dataLayer || [];
+            window.dataLayer.push({
+                'event': 'click_comprar',
+                'productName': productName,
+                
+            });
+        });
+    });
+});
+</script>
+
 
 </body>
 </html>
