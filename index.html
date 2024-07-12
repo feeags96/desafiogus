@@ -202,12 +202,12 @@ document.addEventListener("DOMContentLoaded", function() {
 
     links.forEach(function(link) {
         link.addEventListener("click", function(event) {
-            var linkText = this.innerText;
+            var linkText = this.innerText.trim();
 
             window.dataLayer = window.dataLayer || [];
             window.dataLayer.push({
-                'event': 'click_btn_header',
-                'btn_header': linkText,
+                'event': 'navmenu',
+                'linkText': linkText
             });
         });
     });
