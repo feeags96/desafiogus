@@ -60,8 +60,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     <img src="img/poster.jpg" alt="Café 4">
                 </div>
             </div>
-            <button class="prev">&lt;</button>
-            <button class="next">&gt;</button>
+            <button class="prev" id="voltar">&lt;</button>
+            <button class="next" id="avancar">&gt;</button>
         </div>
     </main>
     
@@ -137,6 +137,42 @@ window.dataLayer = window.dataLayer || [];
 window.dataLayer.push({
 'event': 'click_search',
 'btn_search': 'click search'
+});
+});
+</script>
+<script>
+document.getElementById("back-to-top").addEventListener("click", function () {
+window.dataLayer = window.dataLayer || [];
+window.dataLayer.push({
+'event': 'voltar_ao_topo',
+'btn_topo': 'voltar topo'
+});
+});
+</script>
+<script>
+document.getElementById("newsletter").addEventListener("click", function () {
+window.dataLayer = window.dataLayer || [];
+window.dataLayer.push({
+'event': 'click_newsletter',
+'btn_newsletter': 'click newsletter'
+});
+});
+</script>
+<script>
+document.getElementById("voltar").addEventListener("click", function () {
+window.dataLayer = window.dataLayer || [];
+window.dataLayer.push({
+'event': 'click_voltar',
+'btn_voltar': 'click voltar img'
+});
+});
+</script>
+<script>
+document.getElementById("avancar").addEventListener("click", function () {
+window.dataLayer = window.dataLayer || [];
+window.dataLayer.push({
+'event': 'click_avancar',
+'btn_avancar': 'click avancar img'
 });
 });
 </script>
