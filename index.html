@@ -182,13 +182,13 @@ document.addEventListener("DOMContentLoaded", function() {
     var buttons = document.querySelectorAll(".buy-btn");
     buttons.forEach(function(button) {
         button.addEventListener("click", function() {
-            var productName = this.closest(".product").querySelector("h2").innerText;
+            var item_name = this.closest(".product").querySelector("h2").innerText;
             
 
             window.dataLayer = window.dataLayer || [];
             window.dataLayer.push({
                 'event': 'click_comprar',
-                'item_name': productName,
+                'item_name': item_name,
                 
             });
         });
