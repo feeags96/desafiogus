@@ -132,49 +132,63 @@
 
 <script>
 document.getElementById("searchbtn").addEventListener("click", function () {
-window.dataLayer = window.dataLayer || [];
-window.dataLayer.push({
-'event': 'click_search',
-'btn_search': 'click search'
+ gtag('event': 'click_event',{
+                'custon_section':'home',
+                'custom_type':'search',
+                'custom_title': 'procurar'
+
 });
 });
 </script>
 <script>
 document.getElementById("back-to-top").addEventListener("click", function () {
-window.dataLayer = window.dataLayer || [];
-window.dataLayer.push({
-'event': 'voltar_ao_topo',
-'btn_topo': 'voltar topo'
+ gtag('event': 'click_event',{
+                'custon_section':'home',
+                'custom_type':'button',
+                'custom_title': 'retornar'
 });
 });
 </script>
 <script>
 document.getElementById("newsletter").addEventListener("click", function () {
-window.dataLayer = window.dataLayer || [];
-window.dataLayer.push({
-'event': 'click_newsletter',
-'btn_newsletter': 'click newsletter'
+ gtag('event': 'click_event',{
+                'custon_section':'home',
+                'custom_type':'campo',
+                'custom_title': 'newsletter'
 });
 });
 </script>
-<script>
-document.getElementById("voltar").addEventListener("click", function () {
-window.dataLayer = window.dataLayer || [];
-window.dataLayer.push({
-'event': 'click_voltar',
-'btn_voltar': 'click voltar img'
-});
-});
-</script>
-<script>
-document.getElementById("avancar").addEventListener("click", function () {
-window.dataLayer = window.dataLayer || [];
-window.dataLayer.push({
-'event': 'click_avancar',
-'btn_avancar': 'click avancar img'
-});
-});
-</script>
+  
+ <script>
+    window.addEventListener('DOMContentLoaded', function() {
+        let currentIndex = 0;
+        const items = document.querySelectorAll('.carousel-item');
+        const totalItems = items.length;
+
+        function updateCarousel(index) {
+            items.forEach((item, i) => {
+                item.classList.toggle('active', i === index);
+            });
+            gtag('event', 'click_event', {
+                'custom_section': 'home',
+                'custom_type': 'banner',
+                'custom_title': `banner ${index + 1}`
+            });
+        }
+
+        document.getElementById('voltar').addEventListener('click', function() {
+            currentIndex = (currentIndex > 0) ? currentIndex - 1 : totalItems - 1;
+            updateCarousel(currentIndex);
+        });
+
+        document.getElementById('avancar').addEventListener('click', function() {
+            currentIndex = (currentIndex < totalItems - 1) ? currentIndex + 1 : 0;
+            updateCarousel(currentIndex);
+        });
+
+        updateCarousel(currentIndex);
+    });
+    </script>
 
 <script>
 document.addEventListener("DOMContentLoaded", function() {
@@ -182,12 +196,10 @@ document.addEventListener("DOMContentLoaded", function() {
     buttons.forEach(function(button) {
         button.addEventListener("click", function() {
             var item_name = this.closest(".product").querySelector("h2").innerText;
-            
-
-            window.dataLayer = window.dataLayer || [];
-            window.dataLayer.push({
-                'event': 'click_comprar',
-                'item_name': item_name,
+                gtag('event': 'click_event',{
+                'custon_section':'home',
+                'custom_type':'button',
+                'custom_title': item_name
                 
             });
         });
@@ -195,22 +207,22 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 </script>
 
-<script>
-document.addEventListener("DOMContentLoaded", function() {
-    var links = document.querySelectorAll('nav ul li a');
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        var links = document.querySelectorAll('nav ul li a');
 
-    links.forEach(function(link) {
-        link.addEventListener("click", function(event) {
-            var nameNav = this.innerText;
-            window.dataLayer = window.dataLayer || [];
-            window.dataLayer.push({
-                'event': 'navigationmenu',
-                'linkText': nameNav
+        links.forEach(function(link) {
+            link.addEventListener("click", function(event) {
+                var nameNav = this.innerText;
+                gtag('event', 'click_event', {
+                    'custom_section': 'home',
+                    'custom_type': 'menu',
+                    'custom_title': nameNav
+                });
             });
         });
     });
-});
-</script>
+    </script>
 
 
 </body>
