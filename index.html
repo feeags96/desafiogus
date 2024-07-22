@@ -211,7 +211,7 @@ document.addEventListener("DOMContentLoaded", function() {
     buttons.forEach(function(button) {
         button.addEventListener("click", function() {
             var item_name = this.closest(".product").querySelector("h2").innerText;
-            var customTitle = sanitizeString(item_name);
+            var customTitle = sanitizeString `item_name`;
             gtag('event', 'click_event', {
                 'custom_section': 'home',
                 'custom_type': 'button',
