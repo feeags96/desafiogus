@@ -306,6 +306,26 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 </script>
 
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    var form = document.querySelector("#newsletter form");
+    var isFormInteracted = false;
+
+    form.addEventListener("input", function() {
+        if (!isFormInteracted) {
+            isFormInteracted = true;
+            window.addEventListener("beforeunload", function(event) {
+                gtag('event', 'form_abandon', {
+                    'custom_section': 'home',
+                    'custom_type': 'submit',
+                    'custom_title': 'newsletter_saiu'
+                });
+            });
+        }
+    });
+});
+</script>
+
   
 
 
