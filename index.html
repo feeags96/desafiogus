@@ -131,36 +131,30 @@
     <script src="script.js"></script>
 
 <script>
-document.getElementById("searchbtn").addEventListener("click", function () {
-
- gtag('event': 'gtm.linkClick',{
-                'custon_section':'home',
-                'custom_type':'header',
-                'custom_title': 'procurar'
- });
-});
+document.getElementById("searchbtn").querySelector('button').addEventListener("click", function () {
+    gtag('event', 'click_event', {
+        'custom_section': 'home',
+        'custom_type': 'header',
+        'custom_title': 'procurar'
+    });
 });
 </script>
 <script>
 document.getElementById("back-to-top").addEventListener("click", function () {
-
- gtag('event': 'click_event',{
-                'custon_section':'home',
-                'custom_type':'button',
-                'custom_title': 'retornar'
- });
-});
+    gtag('event', 'click_event', {
+        'custom_section': 'home',
+        'custom_type': 'button',
+        'custom_title': 'retornar'
+    });
 });
 </script>
 <script>
-document.getElementById("newsletter").addEventListener("click", function () {
- 
- gtag('event': 'click_event',{
-                'custon_section':'home',
-                'custom_type':'campo',
-                'custom_title': 'newsletter'
-});
-});
+document.querySelector("#newsletter form button[type='submit']").addEventListener("click", function () {
+    gtag('event', 'click_event', {
+        'custom_section': 'home',
+        'custom_type': 'campo',
+        'custom_title': 'newsletter'
+    });
 });
 </script>
   
@@ -201,12 +195,10 @@ document.addEventListener("DOMContentLoaded", function() {
     buttons.forEach(function(button) {
         button.addEventListener("click", function() {
             var item_name = this.closest(".product").querySelector("h2").innerText;
-
-                gtag('event': 'click_event',{
-                'custon_section':'home',
-                'custom_type':'button',
+            gtag('event', 'click_event', {
+                'custom_section': 'home',
+                'custom_type': 'button',
                 'custom_title': item_name
-                
             });
         });
     });
@@ -230,14 +222,12 @@ document.addEventListener("DOMContentLoaded", function() {
     });
     </script>
 <script>
-document.getElementById("logo").addEventListener("click", function () {
- 
- gtag('event': 'click_event',{
-                'custon_section':'home',
-                'custom_type':'header',
-                'custom_title': 'logo'
-});
-});
+document.getElementById("logo").querySelector('a').addEventListener("click", function () {
+    gtag('event', 'click_event', {
+        'custom_section': 'home',
+        'custom_type': 'header',
+        'custom_title': 'logo'
+    });
 });
 </script>
 
