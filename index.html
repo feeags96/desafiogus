@@ -132,6 +132,7 @@
 
 <script>
 document.getElementById("searchbtn").addEventListener("click", function () {
+ });
  gtag('event': 'click_event',{
                 'custon_section':'home',
                 'custom_type':'header',
@@ -142,6 +143,7 @@ document.getElementById("searchbtn").addEventListener("click", function () {
 </script>
 <script>
 document.getElementById("back-to-top").addEventListener("click", function () {
+ });
  gtag('event': 'click_event',{
                 'custon_section':'home',
                 'custom_type':'button',
@@ -151,6 +153,7 @@ document.getElementById("back-to-top").addEventListener("click", function () {
 </script>
 <script>
 document.getElementById("newsletter").addEventListener("click", function () {
+ });
  gtag('event': 'click_event',{
                 'custon_section':'home',
                 'custom_type':'campo',
@@ -196,12 +199,13 @@ document.addEventListener("DOMContentLoaded", function() {
     buttons.forEach(function(button) {
         button.addEventListener("click", function() {
             var item_name = this.closest(".product").querySelector("h2").innerText;
+ });
                 gtag('event': 'click_event',{
                 'custon_section':'home',
                 'custom_type':'button',
                 'custom_title': item_name
                 
-            });
+           
         });
     });
 });
@@ -225,6 +229,7 @@ document.addEventListener("DOMContentLoaded", function() {
     </script>
 <script>
 document.getElementById("logo").addEventListener("click", function () {
+ });
  gtag('event': 'click_event',{
                 'custon_section':'home',
                 'custom_type':'header',
