@@ -136,6 +136,14 @@
 
     
     <script src="script.js"></script>
+  <script>
+function sanitizeString(str) {
+    var sanitizedStr = str.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
+    sanitizedStr = sanitizedStr.replace(/\s+/g, '-');   
+    sanitizedStr = sanitizedStr.replace(/[^a-z0-9-]/g, '');
+    return sanitizedStr;
+}
+</script>
 
 <script>
 document.getElementById("searchbtn").querySelector('button').addEventListener("click", function () {
@@ -146,6 +154,7 @@ document.getElementById("searchbtn").querySelector('button').addEventListener("c
     });
 });
 </script>
+
 <script>
 document.getElementById("back-to-top").addEventListener("click", function () {
     gtag('event', 'click_event', {
@@ -239,14 +248,7 @@ document.getElementById("logo").querySelector('a').addEventListener("click", fun
 });
 </script>
   
-  <script>
-function sanitizeString(str) {
-    var sanitizedStr = str.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
-    sanitizedStr = sanitizedStr.replace(/\s+/g, '-');   
-    sanitizedStr = sanitizedStr.replace(/[^a-z0-9-]/g, '');
-    return sanitizedStr;
-}
-</script>
+
 
 
 
