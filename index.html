@@ -134,7 +134,7 @@
 document.getElementById("searchbtn").addEventListener("click", function () {
  gtag('event': 'click_event',{
                 'custon_section':'home',
-                'custom_type':'search',
+                'custom_type':'header',
                 'custom_title': 'procurar'
 
 });
@@ -216,13 +216,22 @@ document.addEventListener("DOMContentLoaded", function() {
                 var nameNav = this.innerText;
                 gtag('event', 'click_event', {
                     'custom_section': 'home',
-                    'custom_type': 'menu',
+                    'custom_type': 'header',
                     'custom_title': nameNav
                 });
             });
         });
     });
     </script>
+<script>
+document.getElementById("logo").addEventListener("click", function () {
+ gtag('event': 'click_event',{
+                'custon_section':'home',
+                'custom_type':'header',
+                'custom_title': 'logo'
+});
+});
+</script>
 
 
 </body>
