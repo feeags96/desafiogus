@@ -8,7 +8,7 @@
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
 
-  gtag('config', 'G-ZTWB2JF81Q');
+  gtag('config', 'G-ZTWB2JF81Q',{ 'debug_mode':true });
 </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -159,7 +159,7 @@ document.getElementById("back-to-top").addEventListener("click", function () {
 document.querySelector("#newsletter form button[type='submit']").addEventListener("click", function () {
     gtag('event', 'click_event', {
         'custom_section': 'home',
-        'custom_type': 'campo',
+        'custom_type': 'interação',
         'custom_title': 'newsletter'
     });
 });
