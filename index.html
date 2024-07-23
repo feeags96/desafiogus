@@ -223,7 +223,7 @@ document.addEventListener("DOMContentLoaded", function() {
         button.addEventListener("click", function() {
             var item_name = this.closest(".product").querySelector("h2").innerText;
             var customTitle = sanitizeString(item_name);
-            gtag('event', 'click', {
+            gtag('event', 'comprar', {
                 'custom_section': 'body',
                 'custom_type': 'button',
                 'custom_title': customTitle
