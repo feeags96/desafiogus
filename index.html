@@ -168,8 +168,8 @@ function sanitizeString(str) {
 <script>
 document.getElementById("searchbtn").querySelector('button').addEventListener("click", function () {
     gtag('event', 'click', {
-        'custom_section': 'home',
-        'custom_type': 'header',
+        'custom_section': 'header',
+        'custom_type': 'botton',
         'custom_title': 'search'
     });
 });
@@ -195,9 +195,9 @@ document.getElementById("back-to-top").addEventListener("click", function () {
             items.forEach((item, i) => {
                 item.classList.toggle('active', i === index);
             });
-            gtag('event', 'click', {
+            gtag('event', 'view_promotion', {
                 'custom_section': 'home',
-                'custom_type': 'banner',
+                'custom_type': 'carousel',
                 'custom_title': `banner ${index + 1}`
             });
         }
@@ -242,8 +242,8 @@ document.addEventListener("DOMContentLoaded", function() {
             var nameNav = this.innerText;
             var customTitle = sanitizeString(nameNav);
                 gtag('event', 'click', {
-                    'custom_section': 'home',
-                    'custom_type': 'header',
+                    'custom_section': 'header',
+                    'custom_type': 'nav',
                     'custom_title': customTitle
                 });
             });
@@ -253,8 +253,8 @@ document.addEventListener("DOMContentLoaded", function() {
 <script>
 document.getElementById("logo").querySelector('a').addEventListener("click", function () {
     gtag('event', 'click', {
-        'custom_section': 'home',
-        'custom_type': 'header',
+        'custom_section': 'header',
+        'custom_type': 'icon',
         'custom_title': 'logo'
     });
 });
@@ -307,9 +307,9 @@ document.addEventListener("DOMContentLoaded", function() {
     externalLinks.forEach(function(link) {
         link.addEventListener("click", function(event) {
             var linkUrl = this.href;
-            gtag('event', 'click_footer', {
-                'custom_section': 'home',
-                'custom_type': 'link',
+            gtag('event', 'click', {
+                'custom_section': 'footer',
+                'custom_type': 'link-redes',
                 'custom_title': linkUrl
             });
         });
