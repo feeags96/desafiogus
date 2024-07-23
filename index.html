@@ -146,17 +146,6 @@ function sanitizeString(str) {
 </script>
 
 <script>
-    function getDeviceType() {
-        const ua = navigator.userAgent;
-        if (/android/i.test(ua)) {
-            return 'android';
-        } else if (/iPad|iPhone|iPod/.test(ua) && !window.MSStream) {
-            return 'ios';
-        } else {
-            return 'desktop';
-        }
-    }
-
     function getOrCreateUserID() {
         let userID = localStorage.getItem('userID');
         if (!userID) {
@@ -171,7 +160,6 @@ function sanitizeString(str) {
         var referrer = document.referrer || 'organic';
         gtag('event', 'page_view', {
             'user_id': userID,
-            'device_type': getDeviceType(),
             'referrer': referrer
         });
     });
