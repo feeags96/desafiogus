@@ -146,6 +146,36 @@ function sanitizeString(str) {
 </script>
 
 <script>
+ function getDeviceType() {
+        const ua = navigator.userAgent;
+        if (/android/i.test(ua)) {
+            return 'android';
+        } else if (/iPad|iPhone|iPod/.test(ua) && !window.MSStream) {
+            return 'ios';
+        } else {
+            return 'desktop';
+        }
+    }
+
+    function getOrCreateUserID() {
+        let userID = localStorage.getItem('userID');
+        if (!userID) {
+            userID = 'user_' + Math.random().toString(36).substr(2, 9);
+            localStorage.setItem('userID', userID);
+        }
+        return userID;
+    }
+
+    window.addEventListener('load', function() {
+        var userID = getOrCreateUserID();
+        gtag('event', 'page_view', {
+            'user_id': userID,
+            'device_type': getDeviceType()
+        });
+    });
+    </script>
+
+<script>
 document.getElementById("searchbtn").querySelector('button').addEventListener("click", function () {
     gtag('event', 'click', {
         'custom_section': 'home',
