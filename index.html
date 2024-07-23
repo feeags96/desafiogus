@@ -144,9 +144,7 @@ function sanitizeString(str) {
     return sanitizedStr;
 }
 </script>
-
-<script>
- function getDeviceType() {
+    function getDeviceType() {
         const ua = navigator.userAgent;
         if (/android/i.test(ua)) {
             return 'android';
@@ -168,9 +166,11 @@ function sanitizeString(str) {
 
     window.addEventListener('load', function() {
         var userID = getOrCreateUserID();
+        var referrer = document.referrer || 'organic';
         gtag('event', 'page_view', {
             'user_id': userID,
-            'device_type': getDeviceType()
+            'device_type': getDeviceType(),
+            'referrer': referrer
         });
     });
     </script>
@@ -327,30 +327,24 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 </script>
 
-<script>
-document.addEventListener("DOMContentLoaded", function() {
-    var form = document.querySelector("#newsletter form");
-    var isFormInteracted = false;
+ <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        var form = document.querySelector("#newsletter form");
+        var isFormInteracted = false;
 
-    form.addEventListener("input", function() {
-        if (!isFormInteracted) {
-            isFormInteracted = true;
-            window.addEventListener("beforeunload", function(event) {
-                gtag('event', 'form_abandon', {
-                    'custom_section': 'home',
-                    'custom_type': 'interacao',
-                    'custom_title': 'newsletter_saiu'
+        form.addEventListener("input", function() {
+            if (!isFormInteracted) {
+                isFormInteracted = true;
+                window.addEventListener("unload", function(event) {
+                    gtag('event', 'form_abandon', {
+                        'custom_section': 'home',
+                        'custom_type': 'interacao',
+                        'custom_title': 'newsletter_saiu'
+                    });
                 });
-            });
-        }
+            }
+        });
     });
-});
-</script>
-
-  
-
-
-
-
+   
 </body>
 </html>
