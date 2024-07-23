@@ -168,7 +168,7 @@ document.getElementById("back-to-top").addEventListener("click", function () {
 document.querySelector("#newsletter form button[type='submit']").addEventListener("click", function () {
     gtag('event', 'click', {
         'custom_section': 'home',
-        'custom_type': 'submit',
+        'custom_type': 'interacao',
         'custom_title': 'newsletter'
     });
 });
@@ -263,7 +263,7 @@ document.addEventListener("DOMContentLoaded", function() {
             scrollDepthSent = true;
             gtag('event', 'scroll', {
                 'custom_section': 'home',
-                'custom_type': 'engajamento',
+                'custom_type': 'interacao',
                 'custom_title': 'view_produtos'
             });
         }
@@ -281,7 +281,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
         gtag('event', 'time_spent', {
             'custom_section': 'home',
-            'custom_type': 'engajamento',
+            'custom_type': 'interacao',
             'custom_title': 'time_on_page',
             'time_spent': timeSpent
         });
@@ -317,7 +317,7 @@ document.addEventListener("DOMContentLoaded", function() {
             window.addEventListener("beforeunload", function(event) {
                 gtag('event', 'form_abandon', {
                     'custom_section': 'home',
-                    'custom_type': 'submit',
+                    'custom_type': 'interacao',
                     'custom_title': 'newsletter_saiu'
                 });
             });
