@@ -169,7 +169,7 @@ function sanitizeString(str) {
 document.getElementById("searchbtn").querySelector('button').addEventListener("click", function () {
     gtag('event', 'click', {
         'custom_section': 'header',
-        'custom_type': 'botton',
+        'custom_type': 'button',
         'custom_title': 'search'
     });
 });
@@ -224,7 +224,7 @@ document.addEventListener("DOMContentLoaded", function() {
             var item_name = this.closest(".product").querySelector("h2").innerText;
             var customTitle = sanitizeString(item_name);
             gtag('event', 'click', {
-                'custom_section': 'home',
+                'custom_section': 'body',
                 'custom_type': 'button',
                 'custom_title': customTitle
             });
