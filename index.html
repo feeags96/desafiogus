@@ -151,7 +151,6 @@ document.getElementById("searchbtn").querySelector('button').addEventListener("c
     gtag('event', 'clique', {
         'custom_section': 'header',
         'custom_type': 'button',
-        'custom_title': 'search'
     });
 });
 </script>
@@ -285,7 +284,7 @@ document.querySelector("#searchbtn button").addEventListener("click", function()
     var pesquisa = document.querySelector("#searchbtn input").value;
     gtag('event', 'campo_search', {
         'custom_section': 'header',
-        'custom_type': 'campo_submit',
+        'custom_type': 'search',
         'custom_title': sanitizeString(pesquisa)
     });
 });
