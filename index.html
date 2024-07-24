@@ -285,7 +285,7 @@ document.querySelector("#searchbtn button").addEventListener("click", function()
     var pesquisa = document.querySelector("#searchbtn input").value;
     gtag('event', 'campo_search', {
         'custom_section': 'header',
-        'custom_type': 'search',
+        'custom_type': 'campo_submit',
         'custom_title': sanitizeString(pesquisa)
     });
 });
