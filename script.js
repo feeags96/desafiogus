@@ -188,22 +188,4 @@ document.querySelector("#searchbtn button").addEventListener("click", function()
     });
 });
 
-document.addEventListener("DOMContentLoaded", function() {
-  
-    var form = document.querySelector("#newsletter form");
-  
-    form.addEventListener("submit", function(event) {
-        var fullName = document.getElementById("full-name").value;
-        var email = document.getElementById("email").value;
-        var birthdate = document.getElementById("birthdate").value;
 
-        gtag('event', 'form_dados', {
-            'custom_section': 'home',
-            'custom_type': 'form',
-            'custom_title': 'newsletter',
-            'form_full_name': fullName,
-            'form_email': email,
-            'form_birthdate': birthdate
-        });
-    });
-});
