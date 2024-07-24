@@ -317,24 +317,36 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 </script>
 
- <script>
-    document.addEventListener("DOMContentLoaded", function() {
-        var form = document.querySelector("#newsletter form");
-        var isFormInteracted = false;
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    var form = document.querySelector("#newsletter form");
+    var isFormInteracted = false;
 
-        form.addEventListener("input", function() {
-            if (!isFormInteracted) {
-                isFormInteracted = true;
-                window.addEventListener("unload", function(event) {
-                    gtag('event', 'form_abandon', {
-                        'custom_section': 'home',
-                        'custom_type': 'interacao',
-                        'custom_title': 'newsletter_saiu'
-                    });
+    form.addEventListener("input", function() {
+        if (!isFormInteracted) {
+            isFormInteracted = true;
+            window.addEventListener("beforeunload", function(event) {
+                gtag('event', 'form_abandon', {
+                    'custom_section': 'body',
+                    'custom_type': 'interacao',
+                    'custom_title': 'newsletter_saiu'
                 });
-            }
-        });
+            });
+        }
     });
+});
+</script>
+
+<script>
+document.querySelector("#searchbtn button").addEventListener("click", function() {
+    var pesquisa = document.querySelector("#searchbtn input").value;
+    gtag('event', 'campo_search', {
+        'custom_section': 'header',
+        'custom_type': 'search',
+        'custom_title': sanitizeString(pesquisa)
+    });
+});
+</script>
    
 </body>
 </html>
