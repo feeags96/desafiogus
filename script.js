@@ -116,7 +116,7 @@ document.addEventListener("DOMContentLoaded", function() {
             gtag('event', 'clique_comprar', {
                 'custom_section': 'body',
                 'custom_type': 'botao',
-                'custom_title': 'comprar-'+customTitle
+                'custom_title': 'comprar:'+customTitle
             });
         });
     });
