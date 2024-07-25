@@ -113,10 +113,10 @@ document.addEventListener("DOMContentLoaded", function() {
         button.addEventListener("click", function() {
             var item_name = this.closest(".product").querySelector("h2").innerText;
             var customTitle = sanitizeString(item_name);
-            gtag('event', 'comprar', {
+            gtag('event', 'clique_comprar', {
                 'custom_section': 'body',
                 'custom_type': 'botao',
-                'custom_title':`comprar:${customTitle}`
+                'custom_title': 'comprar -'+ customTitle
             });
         });
     });
