@@ -189,28 +189,6 @@ document.querySelector("#searchbtn button").addEventListener("click", function()
 });
 
 
-  document.addEventListener('DOMContentLoaded', function() {
-    
-    var links = document.querySelectorAll('a');
 
-    links.forEach(function(link) {
-      link.addEventListener('click', function(event) {
-        var url = link.href;
-        if (url && url.indexOf(location.host) === -1) {
-          
-          var linkUrl = new URL(url);
-          var linkDomain = linkUrl.hostname;
-
-          gtag('event', 'click', {
-              'custom_section:'footer',
-            'custom_type': 'icon-redes', 
-            'custom_title': url,           
-            'link_domain': linkDomain   
-              
-          });
-        }
-      });
-    });
-  });
 
 
