@@ -90,7 +90,7 @@ document.getElementById("back-to-top").addEventListener("click", function () {
             gtag('event', 'view_banner', {
                 'custom_section': 'body',
                 'custom_type': 'carousel',
-                'custom_title': `banner${index + 1}`
+                'custom_title': `banner - ${index + 1}`
             });
         }
 
@@ -116,7 +116,7 @@ document.addEventListener("DOMContentLoaded", function() {
             gtag('event', 'comprar', {
                 'custom_section': 'body',
                 'custom_type': 'botao',
-                'custom_title':'comprar' - customTitle
+                'custom_title':`comprar:${customTitle}`
             });
         });
     });
