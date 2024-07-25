@@ -63,13 +63,6 @@ function sanitizeString(str) {
     return sanitizedStr;
 }
 
-document.getElementById("searchbtn").querySelector('button').addEventListener("click", function () {
-    gtag('event', 'clique', {
-        'custom_section': 'header',
-        'custom_type': 'button',
-    });
-});
-
 document.getElementById("back-to-top").addEventListener("click", function () {
     gtag('event', 'clique', {
         'custom_section': 'home',
