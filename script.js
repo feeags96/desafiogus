@@ -115,8 +115,8 @@ document.addEventListener("DOMContentLoaded", function() {
             var customTitle = sanitizeString(item_name);
             gtag('event', 'comprar', {
                 'custom_section': 'body',
-                'custom_type': 'button',
-                'custom_title': customTitle
+                'custom_type': 'botao',
+                'custom_title': comprar:customTitle
             });
         });
     });
@@ -154,7 +154,7 @@ document.addEventListener("DOMContentLoaded", function() {
             var linkUrl = this.href;
             gtag('event', 'clique', {
                 'custom_section': 'footer',
-                'custom_type': 'link-redes',
+                'custom_type': 'link-redes-sociais',
                 'custom_title': linkUrl
             });
         });
