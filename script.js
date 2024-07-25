@@ -202,10 +202,11 @@ document.querySelector("#searchbtn button").addEventListener("click", function()
           var linkDomain = linkUrl.hostname;
 
           gtag('event', 'click', {
-            'event_category': 'outbound', 
-            'event_label': url,           
-            'link_domain': linkDomain,    
-            'transport_type': 'beacon'    
+              'custom_section:'footer',
+            'custom_type': 'icon-redes', 
+            'custom_title': url,           
+            'link_domain': linkDomain   
+              
           });
         }
       });
