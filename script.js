@@ -66,7 +66,7 @@ function sanitizeString(str) {
 document.getElementById("back-to-top").addEventListener("click", function () {
     gtag('event', 'clique', {
         'custom_section': 'home',
-        'custom_type': 'button',
+        'custom_type': 'botao',
         'custom_title': 'retornar-topo'
     });
 });
@@ -124,7 +124,7 @@ document.addEventListener("DOMContentLoaded", function() {
             var customTitle = sanitizeString(nameNav);
                 gtag('event', 'clique', {
                     'custom_section': 'header',
-                    'custom_type': 'nav',
+                    'custom_type': 'botao-nav',
                     'custom_title': customTitle
                 });
             });
@@ -144,11 +144,10 @@ document.addEventListener("DOMContentLoaded", function() {
 
     externalLinks.forEach(function(link) {
         link.addEventListener("click", function(event) {
-            var linkUrl = this.href;
             gtag('event', 'clique', {
                 'custom_section': 'footer',
-                'custom_type': 'link-redes-sociais',
-                'custom_title': linkUrl
+                'custom_type': 'botao-icon',
+                'custom_title': 'redes-sociais'
             });
         });
     });
