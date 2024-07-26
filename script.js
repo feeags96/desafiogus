@@ -154,23 +154,31 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 });
 
-document.addEventListener("DOMContentLoaded", function() {
+
+  document.addEventListener("DOMContentLoaded", function() {
     var form = document.querySelector("#newsletter form");
     var isFormInteracted = false;
 
     form.addEventListener("input", function() {
         if (!isFormInteracted) {
             isFormInteracted = true;
-            window.addEventListener("beforeunload", function(event) {
-                gtag('event', 'abandono_form', {
-                    'custom_section': 'body',
-                    'custom_type': 'interacao',
-                    'custom_title': 'newsletter_saiu'
-                });
+
+            document.addEventListener("click", function(event) {
+                var isClickInsideForm = form.contains(event.target);
+
+                if (!isClickInsideForm) {
+                    gtag('event', 'abandono_form', {
+                        'custom_section': 'body',
+                        'custom_type': 'interacao',
+                        'custom_title': 'newsletter_saiu'
+                    });
+
+                    isFormInteracted = false;
+                }
             });
         }
     });
-});
+  });
 
 document.querySelector("#searchbtn button").addEventListener("click", function() {
     var pesquisa = document.querySelector("#searchbtn input").value;
