@@ -154,16 +154,16 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 });
 
-
   document.addEventListener("DOMContentLoaded", function() {
     var form = document.querySelector("#newsletter form");
     var isFormInteracted = false;
+    var clickListener;
 
     form.addEventListener("input", function() {
         if (!isFormInteracted) {
             isFormInteracted = true;
 
-            document.addEventListener("click", function(event) {
+            clickListener = function(event) {
                 var isClickInsideForm = form.contains(event.target);
 
                 if (!isClickInsideForm) {
@@ -174,8 +174,13 @@ document.addEventListener("DOMContentLoaded", function() {
                     });
 
                     isFormInteracted = false;
+
+                
+                    document.removeEventListener("click", clickListener);
                 }
-            });
+            };
+
+            document.addEventListener("click", clickListener);
         }
     });
   });
