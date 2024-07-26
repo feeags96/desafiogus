@@ -189,7 +189,31 @@ document.querySelector("#searchbtn button").addEventListener("click", function()
     });
 });
 
+var searchButton = document.getElementById("search-button");
+      var searchInput = document.getElementById("search-input");
 
+      searchButton.addEventListener("click", function() {
+        var query = searchInput.value.trim().toLowerCase();
+        var products = document.querySelectorAll(".product-info h2");
+        var isProductAvailable = false;
+
+        products.forEach(function(product) {
+          var productName = product.innerText.trim().toLowerCase();
+          if (productName.includes(query)) {
+            isProductAvailable = true;
+          }
+        });
+
+        var availability = isProductAvailable ? 'produto_disponivel' : 'indisponivel';
+
+        gtag('event', 'search_result', {
+          'custom_section': 'search',
+          'custom_type': 'interaction',
+          'custom_title': availability,
+          'search_query': query
+        });
+      });
+    });
 
 
 
