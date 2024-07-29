@@ -193,6 +193,16 @@ document.querySelector("#searchbtn button").addEventListener("click", function()
     });
 });
 
+window.addEventListener('scroll', function() {
+        const scrollPercentage = (window.scrollY + window.innerHeight) / document.body.scrollHeight * 100;
+        if (scrollPercentage > 50) {
+          gtag('event', 'scroll', {
+            'custom_section': 'home',
+            'custom_type': 'interacao',
+            'custom_title': 'scroll:view_produtos'
+          });
+        }
+      });
 
 
 
