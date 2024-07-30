@@ -146,7 +146,7 @@ document.getElementById("logo").querySelector('a').addEventListener("click", fun
     function MediaClickEvent(custom_title) {
       gtag('event', 'clique', {
         'custom_section': 'footer:redes-sociais',
-        'event_label': 'icon-redes-sociais,
+        'event_label': 'icon-redes-sociais',
         'custom_title': custom_title
       });
     }
@@ -156,13 +156,14 @@ document.getElementById("logo").querySelector('a').addEventListener("click", fun
         MediaClickEvent('LinkedIn');
       });
     }
- 
+
     if (githubLink) {
       githubLink.addEventListener('click', function() {
         MediaClickEvent('GitHub');
       });
     }
   });
+
 
 
   document.addEventListener("DOMContentLoaded", function() {
