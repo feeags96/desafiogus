@@ -145,11 +145,11 @@ document.getElementById("logo").querySelector('a').addEventListener("click", fun
     var linkedinLink = document.querySelector('a[href="https://www.linkedin.com/in/felipe-aur%C3%A9lio-silva-3a882528a/"]');
     var githubLink = document.querySelector('a[href="https://github.com/feeags96"]');
 
-    function MediaClickEvent(platform) {
+    function MediaClickEvent(redesName) {
       gtag('event', 'clique', {
         'custom_section': 'footer:icon',
         'custom_type': 'icon-redes-sociais',
-        'custom_title': platform
+        'custom_title': redesName
       });
     }
 
