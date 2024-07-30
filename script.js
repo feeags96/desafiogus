@@ -80,8 +80,8 @@ document.getElementById("back-to-top").addEventListener("click", function () {
             items.forEach((item, i) => {
                 item.classList.toggle('active', i === index);
             });
-            gtag('event', 'view_banner', {
-                'custom_section': 'body',
+            gtag('event', 'clique', {
+                'custom_section': 'view_banner',
                 'custom_type': 'carousel',
                 'custom_title': `banner-${index + 1}`
             });
@@ -106,10 +106,10 @@ document.addEventListener("DOMContentLoaded", function() {
         button.addEventListener("click", function() {
             var item_name = this.closest(".product").querySelector("h2").innerText;
             var customTitle = sanitizeString(item_name);
-            gtag('event', 'clique_comprar', {
-                'custom_section': 'body',
-                'custom_type': 'botao',
-                'custom_title': 'comprar:'+customTitle
+            gtag('event', 'clique', {
+                'custom_section': 'view_produtos',
+                'custom_type': 'botao:comprar',
+                'custom_title': customTitle
             });
         });
     });
@@ -123,8 +123,8 @@ document.addEventListener("DOMContentLoaded", function() {
             var nameNav = this.innerText;
             var customTitle = sanitizeString(nameNav);
                 gtag('event', 'clique', {
-                    'custom_section': 'header',
-                    'custom_type': 'botao-nav',
+                    'custom_section': 'menu',
+                    'custom_type': 'botao-menu',
                     'custom_title': customTitle
                 });
             });
@@ -133,7 +133,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
 document.getElementById("logo").querySelector('a').addEventListener("click", function () {
     gtag('event', 'clique', {
-        'custom_section': 'header',
+        'custom_section': 'menu',
         'custom_type': 'icon',
         'custom_title': 'logo'
     });
@@ -145,11 +145,11 @@ document.getElementById("logo").querySelector('a').addEventListener("click", fun
     var linkedinLink = document.querySelector('a[href="https://www.linkedin.com/in/felipe-aur%C3%A9lio-silva-3a882528a/"]');
     var githubLink = document.querySelector('a[href="https://github.com/feeags96"]');
 
-    function MediaClickEvent(redesName) {
+    function MediaClickEvent(customTitle) {
       gtag('event', 'clique', {
         'custom_section': 'footer:icon',
         'custom_type': 'icon-redes-sociais',
-        'custom_title': redesName
+        'custom_title': customTitle
       });
     }
 
@@ -185,7 +185,7 @@ document.getElementById("logo").querySelector('a').addEventListener("click", fun
 
                 if (!isClickInsideForm) {
                     gtag('event', 'abandono_form', {
-                        'custom_section': 'body',
+                        'custom_section': 'view_newsletter',
                         'custom_type': 'interacao',
                         'custom_title': 'newsletter_saiu'
                     });
@@ -205,7 +205,7 @@ document.getElementById("logo").querySelector('a').addEventListener("click", fun
 document.querySelector("#searchbtn button").addEventListener("click", function() {
     var pesquisa = document.querySelector("#searchbtn input").value;
     gtag('event', 'campo_search', {
-        'custom_section': 'header',
+        'custom_section': 'menu',
         'custom_type': 'search',
         'custom_title': sanitizeString(pesquisa)
     });
