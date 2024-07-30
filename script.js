@@ -139,31 +139,36 @@ document.getElementById("logo").querySelector('a').addEventListener("click", fun
     });
 });
 
+
   document.addEventListener('DOMContentLoaded', function() {
+
     var linkedinLink = document.querySelector('a[href="https://www.linkedin.com/in/felipe-aur%C3%A9lio-silva-3a882528a/"]');
     var githubLink = document.querySelector('a[href="https://github.com/feeags96"]');
 
-    function MediaClickEvent(custom_title) {
+    function MediaClickEvent(platform) {
       gtag('event', 'clique', {
-        'custom_section': 'footer:redes-sociais',
-        'event_label': 'icon-redes-sociais',
-        'custom_title': custom_title
+        'custom_section': 'footer:icon',
+        'custom_type': 'icon-redes-sociais',
+        'custom_title': platform
       });
     }
 
+ 
     if (linkedinLink) {
       linkedinLink.addEventListener('click', function() {
-        MediaClickEvent('LinkedIn');
+        MediaClickEvent('linkedin');
       });
     }
-
+ 
     if (githubLink) {
       githubLink.addEventListener('click', function() {
-        MediaClickEvent('GitHub');
+        MediaClickEvent('github');
       });
     }
   });
 
+
+   
 
 
   document.addEventListener("DOMContentLoaded", function() {
