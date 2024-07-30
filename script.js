@@ -153,13 +153,13 @@ document.getElementById("logo").querySelector('a').addEventListener("click", fun
 
     if (linkedinLink) {
       linkedinLink.addEventListener('click', function() {
-        sendSocialMediaClickEvent('LinkedIn');
+        MediaClickEvent('LinkedIn');
       });
     }
  
     if (githubLink) {
       githubLink.addEventListener('click', function() {
-        sendSocialMediaClickEvent('GitHub');
+        MediaClickEvent('GitHub');
       });
     }
   });
