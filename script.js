@@ -139,19 +139,31 @@ document.getElementById("logo").querySelector('a').addEventListener("click", fun
     });
 });
 
-document.addEventListener("DOMContentLoaded", function() {
-    var externalLinks = document.querySelectorAll('a[href^="http"]');
+  document.addEventListener('DOMContentLoaded', function() {
+    var linkedinLink = document.querySelector('a[href="https://www.linkedin.com/in/felipe-aur%C3%A9lio-silva-3a882528a/"]');
+    var githubLink = document.querySelector('a[href="https://github.com/feeags96"]');
 
-    externalLinks.forEach(function(link) {
-        link.addEventListener("click", function(event) {
-            gtag('event', 'clique', {
-                'custom_section': 'footer',
-                'custom_type': 'botao-icon',
-                'custom_title': 'redes-sociais'
-            });
-        });
-    });
-});
+    function MediaClickEvent(custom_title) {
+      gtag('event', 'clique', {
+        'custom_section': 'footer:redes-sociais',
+        'event_label': icon-redes-sociais,
+        'custom_title': custom_title
+      });
+    }
+
+    if (linkedinLink) {
+      linkedinLink.addEventListener('click', function() {
+        sendSocialMediaClickEvent('LinkedIn');
+      });
+    }
+ 
+    if (githubLink) {
+      githubLink.addEventListener('click', function() {
+        sendSocialMediaClickEvent('GitHub');
+      });
+    }
+  });
+
 
   document.addEventListener("DOMContentLoaded", function() {
     var form = document.querySelector("#newsletter form");
