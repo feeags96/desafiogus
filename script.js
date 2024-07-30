@@ -81,7 +81,7 @@ document.getElementById("back-to-top").addEventListener("click", function () {
                 item.classList.toggle('active', i === index);
             });
             gtag('event', 'clique', {
-                'custom_section': 'view_banner',
+                'custom_section': 'view-banner',
                 'custom_type': 'carousel',
                 'custom_title': `banner-${index + 1}`
             });
@@ -107,7 +107,7 @@ document.addEventListener("DOMContentLoaded", function() {
             var item_name = this.closest(".product").querySelector("h2").innerText;
             var customTitle = sanitizeString(item_name);
             gtag('event', 'clique', {
-                'custom_section': 'view_produtos',
+                'custom_section': 'view-produtos',
                 'custom_type': 'botao:comprar',
                 'custom_title': customTitle
             });
@@ -185,7 +185,7 @@ document.getElementById("logo").querySelector('a').addEventListener("click", fun
 
                 if (!isClickInsideForm) {
                     gtag('event', 'abandono_form', {
-                        'custom_section': 'view_newsletter',
+                        'custom_section': 'view-newsletter',
                         'custom_type': 'interacao',
                         'custom_title': 'newsletter_saiu'
                     });
