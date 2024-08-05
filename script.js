@@ -8,6 +8,7 @@ document.addEventListener('DOMContentLoaded', function () {
         items.forEach((item, i) => {
             item.classList.toggle('active', i === index);
         });
+        window.tittleBanner = `banner-${index + 1}`;
     }
 
      prevButton.addEventListener('click', () => {
