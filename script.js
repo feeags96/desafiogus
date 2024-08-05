@@ -87,18 +87,18 @@ document.addEventListener('DOMContentLoaded', function () {
 //             });
 //         }
 
-         document.getElementById('voltar').addEventListener('click', function() {
-             currentIndex = (currentIndex > 0) ? currentIndex - 1 : totalItems - 1;
-             updateCarousel(currentIndex);
-         });
+ //        document.getElementById('voltar').addEventListener('click', function() {
+  //           currentIndex = (currentIndex > 0) ? currentIndex - 1 : totalItems - 1;
+    //         updateCarousel(currentIndex);
+   //      });
 
-        document.getElementById('avancar').addEventListener('click', function() {
-             currentIndex = (currentIndex < totalItems - 1) ? currentIndex + 1 : 0;
-             updateCarousel(currentIndex);
-         });
+    //    document.getElementById('avancar').addEventListener('click', function() {
+   //          currentIndex = (currentIndex < totalItems - 1) ? currentIndex + 1 : 0;
+   //          updateCarousel(currentIndex);
+    //     });
 
-         updateCarousel(currentIndex);
-     });
+  //       updateCarousel(currentIndex);
+  //   });
 
 // document.addEventListener("DOMContentLoaded", function() {
 //     var buttons = document.querySelectorAll(".buy-btn");
